@@ -2,7 +2,7 @@ import datetime, random
 
 # random number
 r_num = random.randint(1,10)
-print(f"You're random number is {r_num} days.\n You're random number adds to the current date. ")
+print(f"You're random number is {r_num} days. \n You're random number adds to the current date. \n Current Date:")
 
 # adding new days to current date
 date = datetime.date.today()
@@ -36,7 +36,4 @@ else:
   else:
     new_date = datetime.date(date.year,date.month,new_day)
     print(new_date)
-
-
-
 
