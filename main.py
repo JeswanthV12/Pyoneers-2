@@ -1,42 +1,27 @@
-import datetime, random 
+import datetime, time, random
 
-# random number
-r_num = random.randint(1,10)
-print(f"You're random number is {r_num} days.\n You're random number adds to the current date. ")
-
-# adding new days to current date
+# gathering current date
 date = datetime.date.today()
-print(f"Current Date: {date}")
-new_day = date.day + r_num
 
-# calculating new month and day if the new day is > max month days
-if date.month == 4 or date.month == 6 or date.month == 9 or date.month == 11:
-  if new_day > 30:
-    new_month = date.month + 1
-    new_day2 = new_day - 30 
-    new_date = datetime.date(date.year,new_month,new_day2)
-    print(new_date)
-  else:
-    new_date = datetime.date(date.year,date.month,new_day)
-elif date.month == 1 or date.month == 3 or  date.month == 5 or date.month == 7 or date.month == 8 or date.month == 10 or date.month == 12:
-  if new_day > 31:
-    new_month = date.month + 1
-    new_day2 = new_day - 31
-    new_date = datetime.date(date.year,new_month,new_day2)
-    print(new_date)
-  else:
-    new_date = datetime.date(date.year, date.month, new_day)
-    print(new_date)
-else:
-  if new_day > 28:
-    new_month = date.month + 1
-    new_day2 = new_day - 28
-    new_date = datetime.date(date.year, new_month, new_day2)
-    print(new_date)
-  else:
-    new_date = datetime.date(date.year,date.month,new_day)
-    print(new_date)
+# gathering famous person birthday
+print("Think of the birthday of a famous person.")
+year = random.randint(1500,2020)
+month = 12
+day = 10
+br_date = datetime.date(year,month,day)
 
+# calculating difference of two dates
+diff = date.month - br_date.month
+diff2 = date.day - br_date.day
 
+print(f"\nBirthday Date: {br_date} \nCurrent Date: {date}")
+if date.month > br_date.month:
+  print(f"The birthday has passed.")
+elif date.month == br_date.month & date.day > br_date.day:
+  print("The birthday has passed.")
+elif date.month == br_date.month & date.day == br_date.day:
+  print("It's there birthday!!")
 
-
+#year = int(input("What year they were born? \n"))
+#month = int(input("What month were they born? \n"))
+#day = int(input("On what day were they born? \n"))
